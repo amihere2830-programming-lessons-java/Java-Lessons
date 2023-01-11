@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<GridPane fx:controller="com.example.controls.HelloController"
+          xmlns:fx="http://javafx.com/fxml" alignment="CENTER" hgap="10" vgap="10">
+
+    <Button GridPane.rowIndex="1" GridPane.columnIndex="0" text="Click Me" >
+        <graphic>
+            <ImageView>
+                <Image url="@/toolbarButtonGraphics/general/TipOfTheDay24.gif"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="1" text="This is a label"
+            textFill="blue" wrapText="true">
+        <font>
+            <Font name="Arial italic" size="12" />
+        </font>
+        <graphic>
+            <ImageView>
+                <Image url="@/toolbarButtonGraphics/general/Information24.gif"/>
+            </ImageView>
+        </graphic>
+    </Label>
+
+
+    <!--Add RadioButton in VBox-->
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="2" text="Select Color:"/>
+    <fx:define>
+        <ToggleGroup fx:id="colorToggleGroup"/>
+            <!--ToggleGroup does not descend from node, hence, the need to use fx:define-->
+    </fx:define>
+    <VBox GridPane.rowIndex="1" GridPane.columnIndex="2"  spacing="5">
+        <padding>
+            <Insets left="20" right="20"/>
+        </padding>
+        <RadioButton  text="Red" textFill="red" toggleGroup="$colorToggleGroup"/>
+        <!--Make Brown button default selected-->
+        <RadioButton text="Brown" textFill="brown" toggleGroup="$colorToggleGroup" selected="true"/>
+        <RadioButton text="Green" textFill="green" toggleGroup="$colorToggleGroup"/>
+    </VBox>
+
+
+    <!--Add CheckBox using VBox-->
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="3" text="Select Animal:"/>
+    <VBox GridPane.rowIndex="1" GridPane.columnIndex="3" spacing="5">
+        <padding>
+            <Insets left="20" right="20"/>
+        </padding>
+        <CheckBox text="Dog" indeterminate="true"/>
+        <CheckBox text="Cat"/>
+        <CheckBox text="Bird"/>
+    </VBox>
+
+
+    <!--Add ToggleButton using HBox-->
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="4" text="Toggle:"/>
+    <HBox GridPane.rowIndex="1" GridPane.columnIndex="4" spacing="3">
+        <ToggleButton text="Tog-1"  />
+        <ToggleButton text="Tog-2"  />
+        <ToggleButton text="Tog-3"  />
+    </HBox>
+
+
+    <!--Add ComboBox in VBox-->
+    <VBox GridPane.rowIndex="2" GridPane.columnIndex="2" spacing="5">
+        <padding>
+            <Insets top="40" bottom="30"/>
+        </padding>
+        <Label text="Select Option:"/>
+        <ComboBox >
+            <items>
+                <!--Populate ComboBox with a list of Strings-->
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Option-1"/>
+                    <String fx:value="Option-2"/>
+                    <String fx:value="Option-3"/>
+                    <String fx:value="Option-4"/>
+                    <String fx:value="Option-5"/>
+                </FXCollections>
+            </items>
+        <!--Set default option-->
+            <value>
+                <String fx:value="Option-4"/>
+            </value>
+        </ComboBox>
+
+
+        <!--Add ChoiceBox-->
+        <Label text="Choose:"/>
+        <ChoiceBox GridPane.rowIndex="3" GridPane.columnIndex="0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="cb 1"/>
+                    <String fx:value="cb 2"/>
+                    <String fx:value="cb 3"/>
+                    <String fx:value="cb 4"/>
+                    <String fx:value="cb 5"/>
+                </FXCollections>
+            </items>
+
+        </ChoiceBox>
+    </VBox>
+
+
+
+<!--Add TextField and passwordField for user input-->
+    <HBox GridPane.rowIndex="4" GridPane.columnIndex="0" spacing="10" GridPane.columnSpan="5">
+        <padding>
+            <Insets top="20"/>
+        </padding>
+        <Label text="User Name:"/>
+        <TextField />
+        <Label text="Password:"/>
+        <PasswordField />
+        <Button text="send" />
+    </HBox>
+
+
+<!--Add Slider-->
+    <Slider GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="4"
+            min="0" max="100" showTickLabels="true" showTickMarks="true"
+            minorTickCount="4" snapToTicks="true"/>
+
+
+<!--    Add Spinner-->
+    <Spinner GridPane.rowIndex="5" GridPane.columnIndex="4" min="0" max="100"
+                editable="true" initialValue="50"/>
+
+
+<!--    Add Color Picker-->
+    <ColorPicker GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+
+
+
+<!--    Add Date Picker-->
+    <DatePicker GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+
+
+
+<!--    Wrap Titled Panes inside Accordion-->
+<Accordion GridPane.rowIndex="6" GridPane.columnIndex="2" GridPane.columnSpan="2"
+            expandedPane="$tp1">
+    <panes>
+        <!--Add Titled Panes-->
+        <TitledPane  fx:id="tp1"  text="Titled Pane 1" >
+            <Label text="Label 1 in titled pane 1"/>
+        </TitledPane>
+        <TitledPane text="Titled Pane 2" >
+            <Label text="Label 2 in titled pane 2"/>
+        </TitledPane>
+        <TitledPane text="Titled Pane 3" >
+            <Label text="Label 3 in titled pane 3"/>
+        </TitledPane>
+    </panes>
+</Accordion>
+
+
+
+
+</GridPane>
+
+<!--<VBox >-->
+<!--    <padding>-->
+<!--        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>-->
+<!--    </padding>-->
+
+<!--    <Label fx:id="welcomeText"/>-->
+<!--    <Button text="Hello!" onAction="#onHelloButtonClick"/>-->
+<!--</VBox>-->

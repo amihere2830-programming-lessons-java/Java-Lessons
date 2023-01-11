@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane fx:controller="com.example.layout.HelloController"
+            xmlns:fx="http://javafx.com/fxml" style="-fx-background-color: tomato">
+    <!-- TOP PANE   -->
+    <top>
+        <HBox spacing="10" alignment="center" style="-fx-background-color: gray">
+            <padding>
+                <Insets bottom="10" top="10"/>
+            </padding>
+            <Label text="Welcome to Amihere Family" />
+        </HBox>
+
+    </top>
+
+    <!-- LEFT PANE   -->
+    <left>
+        <VBox spacing="10" >
+            <padding>
+                <Insets top="10" left="10" right="10"/>
+            </padding>
+<!--            <Button text="Samuel" onAction="#onSamuelButtonClick" prefWidth="100"/>-->
+            <Button text="Samuel" onAction="#onSamuelButtonClick" prefWidth="100"/>
+            <Button text="Rebecca" onAction="#onRebeccaButtonClick" prefWidth="100"/>
+            <Button text="Jeff" onAction="#onJeffButtonClick" prefWidth="100"/>
+            <Button text="Clement" onAction="#onClementButtonClick" prefWidth="100"/>
+        </VBox>
+    </left>
+
+<!-- CENTER PANE   -->
+    <center>
+            <VBox spacing="10" >
+                <padding>
+                    <Insets top="20" left="100"/>
+                </padding>
+                <Label fx:id="birthDayText"/>
+<!--                <Button text="Hello!" onAction="#onHelloButtonClick"/>-->
+            </VBox>
+    </center>
+
+<!--     BOTTOM PANE   -->
+    <bottom>
+
+        <HBox spacing="10" alignment="bottom_center" style="-fx-background-color: gray">
+            <padding>
+                <Insets bottom="10" right="10" top="10"/>
+            </padding>
+            <Label text="Samuel Amihere © 2023" style="-fx-font-style: italic" />
+<!--            <Button text="Hello!-1" onAction="#onHelloButtonClick" prefWidth="100"/>-->
+<!--            <Button text="Hello!-2" onAction="#onHelloButtonClick" prefWidth="100"/>-->
+<!--            <Button text="Hello!-3" onAction="#onHelloButtonClick" prefWidth="100"/>-->
+        </HBox>
+    </bottom>
+
+</BorderPane>
+
+        <!--<GridPane alignment="top_left" fx:controller="com.example.layout.HelloController" xmlns:fx="http://javafx.com/fxml"-->
+<!--          hgap="10" vgap="10" style="-fx-border-color: blue">-->
+
+<!--    <VBox alignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="0" spacing="10">-->
+<!--        <Label fx:id="welcomeText"/>-->
+<!--        <Button text="Hello!" onAction="#onHelloButtonClick"/>-->
+<!--    </VBox>-->
+<!--    <HBox GridPane.rowIndex="1" GridPane.columnIndex="0" spacing="10">-->
+<!--        <Button text="Hello!-1" onAction="#onHelloButtonClick"/>-->
+<!--        <Button text="Hello!-2" onAction="#onHelloButtonClick"/>-->
+<!--    </HBox>-->
+
+<!--</GridPane>-->
+
+
+
+
+<!--<VBox alignment="CENTER" maxHeight="1080.0" maxWidth="1920.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml"-->
+<!--      fx:controller="com.example.layout.HelloController">-->
+<!--    <padding>-->
+<!--        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>-->
+<!--    </padding>-->
+
+<!--    <Label fx:id="welcomeText"/>-->
+<!--    <Button text="Hello!" onAction="#onHelloButtonClick"/>-->
+<!--    -->
+
+<!--</VBox>-->

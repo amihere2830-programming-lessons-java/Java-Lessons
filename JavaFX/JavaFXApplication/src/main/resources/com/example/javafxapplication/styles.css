@@ -1,0 +1,9 @@
+.button {
+    -fx-background-color: green;
+    -fx-text-fill: white;
+    -fx-border-radius: 0px;
+}
+
+#button_three {
+    -fx-background-color: blue;
+}
